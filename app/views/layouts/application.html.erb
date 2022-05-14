@@ -10,6 +10,21 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header class="head_container">
+      <div class="title-content">
+        <h1> <%= link_to 'Sistema de Entregas', root_path, class: 'home-button' %></h1>
+      </div>
+
+      <div class="menu-content">
+        <ul class="menu-list">
+          <li>Entrar</li>
+          <li>Cadastrar</li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <%= yield %>
+    </main>
   </body>
 </html>
