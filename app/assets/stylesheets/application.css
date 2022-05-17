@@ -21,13 +21,13 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-body{
-  background: #222222;
+body {
+  background: #fff;
 }
 
 header {
   background: #0c34a3;
-  display: flex;  
+  display: flex;
   align-items: center;
   justify-content: space-between;
 }
@@ -35,18 +35,39 @@ header {
 header div.title-content {
   align-self: center;
   margin: 10px 0 10px 2%;
-  }
+}
 
-header h1 a, a:hover, a:focus, a:active {
-      text-decoration: none;
-      color: inherit;
-      color: white;
-      font-size: 25pt;
+header div.title-content h1 a {
+  text-decoration: none;
+  color: inherit;
+  color: white;
+  font-size: 25pt;
+}
+
+header div.title-content h1 a:hover {
+  text-decoration: none;
+  color: inherit;
+  color: white;
+  font-size: 25pt;
+}
+
+header div.title-content h1 a:focus {
+  text-decoration: none;
+  color: inherit;
+  color: white;
+  font-size: 25pt;
+}
+
+header div.title-content h1 a:active {
+  text-decoration: none;
+  color: inherit;
+  color: white;
+  font-size: 25pt;
 }
 
 header div.menu-content {
   margin-right: 2%;
-  padding: 0 10px; 
+  padding: 0 10px;
   width: 200px;
 }
 
@@ -63,4 +84,24 @@ header ul.menu-list li {
   padding: 5px 10px 5px 10px;
   border-radius: 5px;
   font-weight: bold;
+}
+
+header div.entity-container {
+  margin-right: 20px;
+  width: 240px;
+  display: flex;
+  justify-content: space-between;
+}
+
+header div.entity-container p.current-entity {
+  color: #fff;
+}
+
+header div.entity-container p.current_entity span {
+  color: #fff;
+  font-weight: bold;
+}
+
+header div.entity-container button {
+  padding: 0 2px;
 }

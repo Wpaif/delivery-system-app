@@ -15,15 +15,32 @@
         <h1> <%= link_to 'Sistema de Entregas', root_path, class: 'home-button' %></h1>
       </div>
 
-      <div class="menu-content">
-        <ul class="menu-list">
-          <li>Entrar</li>
-          <li>Cadastrar</li>
-        </ul>
-      </div>
+      <% unless admin_signed_in? %>
+        <div class="menu-content">
+          <ul class="menu-list">
+            <li>Entrar</li>
+            <li>Cadastrar</li>
+          </ul>
+        </div>
+      <% else %>
+        <div class="entity-container">
+          <p class="current-entity">
+            <span>Admin:</span> <%= current_admin.email %>
+          </p>
+          <%= button_to 'Sair', destroy_admin_session_path, method: :delete %>
+        </div>
+      <% end %>
     </header>
 
     <main>
+
+      <% if flash[:notice] %>
+        <p class="notice"><%= notice %></p>
+      <% elsif flash[:alert]%>
+        <p class="alert"><%= alert %></p>
+      <% end %>
+
+
       <%= yield %>
     </main>
   </body>
