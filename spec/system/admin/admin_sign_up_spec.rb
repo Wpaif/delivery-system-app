@@ -1,60 +1,35 @@
 require 'rails_helper'
 
-# rubocop:disable Metrics/BlockLength
-describe 'Administrador faz login' do
-  it 'e vê o formulário' do
+describe 'Administrador se registra' do
+  it 'e vê o fomulário' do
     # Act
-    visit new_admin_session_path
+    visit new_admin_registration_path
+    within('form') do
+      fill_in 'Email', with: 'admin@admin.com'
+      fill_in 'Senha', with: '123456'
+      fill_in 'Confirme sua senha', with: '123456'
+      click_on 'Registrar-se'
+    end
 
     # Assert
-    expect(current_path).to eq new_admin_session_path
-    expect(page).to have_css 'h2', text: 'Login Administrativo'
-    within('form') do
-      expect(page).to have_field 'Email'
-      expect(page).to have_field 'Senha'
-    end
-  end
-
-  it 'com sucesso' do
-    # Arrange
-    Admin.create!(email: 'wilian@admin.com', password: '123456')
-
-    # Act
-    visit new_admin_session_path
-
-    within('form') do
-      fill_in 'Email',	with: 'wilian@admin.com'
-      fill_in 'Senha',	with: '123456'
-      click_on 'Entrar'
-    end
-    # Assert
-    expect(page).to have_content 'Login efetuado com sucesso.'
+    expect(page).to have_content 'Bem vindo! Você realizou seu registro com sucesso.'
     within('header') do
-      expect(page).to have_content 'Admin: wilian@admin.com'
+      expect(page).to have_content 'Admin: admin@admin.com'
       expect(page).to have_button 'Sair'
     end
   end
 
-  it 'e faz logout' do
-    # Arrange
-    Admin.create!(email: 'wilian@admin.com', password: '123456')
-
+  it 'e não preenche os capos corretamente' do
     # Act
-    visit new_admin_session_path
-
+    visit new_admin_registration_path
     within('form') do
-      fill_in 'Email',	with: 'wilian@admin.com'
-      fill_in 'Senha',	with: '123456'
-      click_on 'Entrar'
+      fill_in 'Email', with: ''
+      fill_in 'Senha', with: '123456'
+      fill_in 'Confirme sua senha', with: '123456'
+      click_on 'Registrar-se'
     end
-    click_on 'Sair'
 
     # Assert
-    expect(page).to have_content 'Logout efetuado com sucesso.'
-    within('header') do
-      expect(page).not_to have_content 'Admin: wilian@admin.com'
-      expect(page).not_to have_button 'Sair'
-    end
+    expect(page).to have_content 'Email não pode ficar em branco'
   end
 end
-# rubocop:enable Metrics/BlockLength
