@@ -1,24 +1,50 @@
-# README
+# Sistema de Entregas
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Tecnologias usadas
+<table>
+  <tr>
+    <td>Ruby</td>
+    <td>
+      3.1.1
+    </td>
+  </tr>
+  <tr>
+    <td>Rails</td>
+    <td>
+      7.0.3
+    </td>
+  </tr>
+  <tr>
+    <td>Banco de dados</td>
+    <td>
+      SQLite3
+    </td>
+  </tr>
+</table>
 
-Things you may want to cover:
+# Como executar localmente 
 
-* Ruby version
+## 1° Clone o repositório e entre na pasta
+```zsh
+git clone https://github.com/Wpaif/delivery-system-app
+cd delivery-system-app
+```
 
-* System dependencies
+## 2° Instale as dependências do projeto
+```
+bundle install
+```
 
-* Configuration
+## 3° Execute o projeto
 
-* Database creation
+```
+rails db:create
+rails db:migrate
+rails db:seed
+rails server
+```
+Abra seu navegador em <a href="http://localhost:3000">http://localhost:3000</a>
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Acompanhe o desenvolvimento clicando <a href="https://github.com/users/Wpaif/projects/1">aqui</a>
+# Autor
+Wilian Ferreira
