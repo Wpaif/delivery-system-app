@@ -105,3 +105,7 @@ header div.entity-container p.current_entity span {
 header div.entity-container button {
   padding: 0 2px;
 }
+
+main {
+  padding: 10px 10px 0 10px;
+}

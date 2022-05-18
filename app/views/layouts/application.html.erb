@@ -34,11 +34,13 @@
 
     <main>
 
-      <% if flash[:notice] %>
-        <p class="notice"><%= notice %></p>
-      <% elsif flash[:alert]%>
-        <p class="alert"><%= alert %></p>
-      <% end %>
+      <div style="background: #FF0000c1">
+        <% if flash[:notice] %>
+          <p class="notice"><%= notice %></p>
+        <% elsif flash[:alert]%>
+          <p class="alert"><%= alert %></p>
+        <% end %>
+      </div>
 
 
       <%= yield %>
