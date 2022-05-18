@@ -1,0 +1,34 @@
+<h2> <%= @carrier.brand_name %> </h2>
+
+<dl>
+  <div class="description-list-container">
+    <dt><strong>Razão social:</strong></dt>
+    <dd> <%= @carrier.corporate_name %> </dd>
+  </div>
+
+  <div class="description-list-container">
+    <dt><strong>Domínio de email:</strong></dt>
+    <dd> <%= @carrier.email_domain %> </dd>
+  </div>
+
+  <div class="description-list-container">
+    <dt><strong>CNPJ:</strong></dt>
+    <dd> <%= @carrier.registered_number %> </dd>
+  </div>
+
+  <div class="description-list-container">
+    <dt><strong>Endereço de faturamento:</strong></dt>
+    <dd> <%= @carrier.billing_address %> </dd>
+  </div>
+
+  <div class="description-list-container">
+    <dt><strong>Status:</strong></dt>
+    <% if @carrier.enable %>
+      <dd> Ativa </dd>
+    <% else %>
+      <dd> Desativada </dd>
+    <% end %>
+  </div>
+</dl>
+
+<%= link_to 'Voltar', admins_backoffice_carriers_path, class: 'back-button'  %>

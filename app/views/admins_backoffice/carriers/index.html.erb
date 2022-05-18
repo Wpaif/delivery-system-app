@@ -19,14 +19,14 @@
     </thead>
 
     <tbody>
-      <% @carries.each do |carrie| %>
+      <% @carries.each do |carrier| %>
         <tr>
-          <td> <%= carrie.brand_name %> </td>
-          <td> <%= carrie.corporate_name %> </td>
-          <td> <%= carrie.email_domain %> </td>
-          <td> <%= carrie.registered_number %> </td>
-          <td> <%= carrie.billing_address %> </td>
-          <td> <%= link_to 'Detalhes', '#'  %> </td>
+          <td> <%= carrier.brand_name %> </td>
+          <td> <%= carrier.corporate_name %> </td>
+          <td> <%= carrier.email_domain %> </td>
+          <td> <%= carrier.registered_number %> </td>
+          <td> <%= carrier.billing_address %> </td>
+          <td> <%= link_to 'Detalhes', admins_backoffice_carrier_path(carrier) %> </td>
         </tr>
       <% end %>
     </tbody>

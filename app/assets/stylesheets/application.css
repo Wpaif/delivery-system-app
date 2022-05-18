@@ -161,3 +161,20 @@ table thead tr th a {
 table tbody td {
   padding: 5px 10px;
 }
+
+dl{
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+dl div.description-list-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  background-color: #e4e4e4;
+  border-radius: 5px;
+  box-shadow: #bebebe 5px 5px 10px;
+  margin: 15px 0;
+  width: 500px;
+  padding: 10px;
+}
