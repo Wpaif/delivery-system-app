@@ -30,7 +30,6 @@ describe 'Adiministrador consutal as transportadoras' do
       expect(page).to have_css 'th', text: 'Domínio'
       expect(page).to have_css 'th', text: 'CNPJ'
       expect(page).to have_css 'th', text: 'Endereço para faturamento'
-      expect(page).to have_css 'th', text: 'Cadastrar'
 
       expect(page).to have_css 'td', text: 'Pirate Dispatch Organization'
       expect(page).to have_css 'td', text: "Buggy's Delivery"

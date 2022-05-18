@@ -112,6 +112,31 @@ main {
 
 main h2 {
   font-size: 25pt;
+  margin-bottom: 30px;
+}
+
+p.notice {
+  background-color: #b1ff92;
+  border: 2px solid #1ba33b;
+  border-radius: 10px;
+  margin: 30px 0 20px 0;
+  padding: 10px;
+  font-weight: bold;
+  color: #1ba33b;
+  font-size: 15pt;
+  width: 500px;
+}
+
+p.alert {
+  background-color: #ff9292;
+  border: 2px solid #fc3434;
+  border-radius: 10px;
+  margin: 30px 0 20px 0;
+  padding: 10px;
+  font-weight: bold;
+  color: #fc3434;
+  font-size: 15pt;
+  width: 500px;
 }
 
 main a.back-button {
@@ -119,15 +144,26 @@ main a.back-button {
   font-weight: 100;
   text-decoration: none;
   background-color: #007bff;
-  padding: 5px;
+  padding: 10px;
   border-radius: 5px;
+  font-weight: bold;    
+}
+
+main a.register-button{
+  color: #FFF;
+  font-weight: 100;
+  text-decoration: none;
+  background-color: #28A745;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
 }
 
 div.collection-empty{
   background-color: #ff9292;
   border: 2px solid #fc3434;
   border-radius: 10px;
-  margin: 10px 0 20px 0;
+  margin: 30px 0 50px 0;
   padding: 10px;
   font-weight: bold;
   color: #fc3434;
@@ -163,7 +199,7 @@ table tbody td {
 }
 
 dl{
-  margin-top: 20px;
+  margin: 0 0 35px 0;
   border-radius: 10px;
 }
 

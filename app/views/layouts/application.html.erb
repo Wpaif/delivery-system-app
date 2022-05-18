@@ -33,14 +33,15 @@
     </header>
 
     <main>
-      <% if notice || alert %>
-        <div style="color: #FF0000">
-            <p class="notice"><%= notice %></p>
+      <div style="color: #FF0000">
+          <% if alert %>
             <p class="alert"><%= alert %></p>
-        </div> 
-      <% end %>
-
-
+          <% end %>
+          <% if notice %>
+            <p class="notice"><%= notice %></p>
+          <% end %>
+      </div> 
+    
       <%= yield %>
     </main>
   </body>

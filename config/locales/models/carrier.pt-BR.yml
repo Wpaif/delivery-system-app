@@ -1,0 +1,12 @@
+pt-BR:
+  activerecord:
+    models:
+      carrier: Transportadora
+    attributes:
+      carrier:
+        brand_name: Nome
+        corporate_name: Razão social
+        email_domain: Domínio de email
+        registered_number: CNPJ
+        billing_address: Endereço de faturamento
+        anable: Status
