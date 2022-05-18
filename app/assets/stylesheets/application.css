@@ -109,3 +109,55 @@ header div.entity-container button {
 main {
   padding: 10px 10px 0 10px;
 }
+
+main h2 {
+  font-size: 25pt;
+}
+
+main a.back-button {
+  color: #FFF;
+  font-weight: 100;
+  text-decoration: none;
+  background-color: #007bff;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+div.collection-empty{
+  background-color: #ff9292;
+  border: 2px solid #fc3434;
+  border-radius: 10px;
+  margin: 10px 0 20px 0;
+  padding: 10px;
+  font-weight: bold;
+  color: #fc3434;
+  font-size: 15pt;
+  width: 500px;
+}
+
+table {
+  margin: 20px 0;
+  background-color: black;
+  border-radius: 5px;
+}
+
+table thead {
+  background-color: #515151;
+  color: #ffffff
+}
+
+table thead tr th {
+  padding: 5px;
+}
+
+table tbody tr {
+  background-color: #fff;
+}
+
+table thead tr th a { 
+  color: white;
+} 
+
+table tbody td {
+  padding: 5px 10px;
+}

@@ -33,14 +33,12 @@
     </header>
 
     <main>
-
-      <div style="background: #FF0000c1">
-        <% if flash[:notice] %>
-          <p class="notice"><%= notice %></p>
-        <% elsif flash[:alert]%>
-          <p class="alert"><%= alert %></p>
-        <% end %>
-      </div>
+      <% if notice || alert %>
+        <div style="color: #FF0000">
+            <p class="notice"><%= notice %></p>
+            <p class="alert"><%= alert %></p>
+        </div> 
+      <% end %>
 
 
       <%= yield %>

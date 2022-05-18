@@ -1,0 +1,37 @@
+<h2>Transportadoras</h2>
+
+
+<% unless @carries.any? %>
+  <div class="collection-empty">
+    Não há transportadoras cadastradas.
+  </div>
+<% else %>
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Razão Social</th>
+        <th>Domínio</th>
+        <th>CNPJ</th>
+        <th>Endereço para faturamento</th>
+        <th> <%= link_to 'Cadastrar', '#' %> </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @carries.each do |carrie| %>
+        <tr>
+          <td> <%= carrie.brand_name %> </td>
+          <td> <%= carrie.corporate_name %> </td>
+          <td> <%= carrie.email_domain %> </td>
+          <td> <%= carrie.registered_number %> </td>
+          <td> <%= carrie.billing_address %> </td>
+          <td> <%= link_to 'Detalhes', '#'  %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+
+<%= link_to 'Voltar', admin_path, class: 'back-button'%>
