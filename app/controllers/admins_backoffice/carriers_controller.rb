@@ -14,12 +14,12 @@ class AdminsBackoffice::CarriersController < AdminsBackofficeController
   def create
     @carrier = Carrier.new(carrier_params)
     @carrier.enable = true
-    if @carrier.save!
-      redirect_to admins_backoffice_carrier_path(@carrier.id),
+    if @carrier.save
+      redirect_to admins_backoffice_carrier_path(@carrier),
                   notice: 'Transportadora registrada com sucesso.'
     else
       flash[:notice] = 'Não foi possível registrar a transportadora.'
-      render :new
+      render new_admins_backoffice_carrier_path
     end
   end
 

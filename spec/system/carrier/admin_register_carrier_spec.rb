@@ -30,7 +30,7 @@ describe 'Administrador registra uma transportadora' do
     expect(page).to have_css 'input[type="submit"]'
   end
 
-  it "com sucesso" do
+  it 'com sucesso' do
     # Arrange
     Admin.create!(email: 'admin@admin.com', password: '123456')
 
@@ -53,6 +53,33 @@ describe 'Administrador registra uma transportadora' do
 
     # Assert
     expect(page).to have_css 'p', text: 'Transportadora registrada com sucesso.'
+  end
+
+  it 'é não preenche os campos adequadamente' do
+    # Arrange
+    Admin.create!(email: 'admin@admin.com', password: '123456')
+
+    # Act
+    visit admin_path
+    within('form') do
+      fill_in 'Email', with: 'admin@admin.com'
+      fill_in 'Senha', with: '123456'
+      click_on 'Entrar'
+    end
+    click_on 'Transportadoras'
+    click_on 'Cadastrar'
+
+    fill_in 'Nome', with: 'Pirate Dispatch Organization'
+    fill_in 'Razão social', with: ''
+    fill_in 'Domínio de email', with: 'buggy.com'
+    fill_in 'CNPJ', with: '12345'
+    fill_in 'Endereço de faturamento', with: 'Karai Bari Island'
+    click_on 'Criar Transportadora'
+
+    # Assert
+    expect(page).to have_content 'Não foi possível registrar a transportadora.'
+    expect(page).to have_content 'Razão social não pode ficar em branco'
+    expect(page).to have_content 'CNPJ não é válido'
   end
 end
 # rubocop:enable Metrics/BlockLength
