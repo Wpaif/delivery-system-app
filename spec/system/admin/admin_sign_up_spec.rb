@@ -14,7 +14,7 @@ describe 'Administrador se registra' do
     # Assert
     expect(page).to have_content 'Bem vindo! Você realizou seu registro com sucesso.'
     within('header') do
-      expect(page).to have_content 'Admin: admin@admin.com'
+      expect(page).to have_content 'Administrador: admin@admin.com'
       expect(page).to have_button 'Sair'
     end
   end

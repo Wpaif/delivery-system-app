@@ -30,7 +30,7 @@ describe 'Administrador faz login' do
     # Assert
     expect(page).to have_content 'Login efetuado com sucesso.'
     within('header') do
-      expect(page).to have_content 'Admin: wilian@admin.com'
+      expect(page).to have_content 'Administrador: wilian@admin.com'
       expect(page).to have_button 'Sair'
     end
   end

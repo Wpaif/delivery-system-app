@@ -68,7 +68,7 @@ header div.title-content h1 a:active {
 header div.menu-content {
   margin-right: 2%;
   padding: 0 10px;
-  width: 200px;
+  width: 230px;
 }
 
 header ul.menu-list {
@@ -88,7 +88,7 @@ header ul.menu-list li {
 
 header div.entity-container {
   margin-right: 20px;
-  width: 240px;
+  width: 300px;
   display: flex;
   justify-content: space-between;
 }

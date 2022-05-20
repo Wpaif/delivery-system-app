@@ -15,19 +15,24 @@
         <h1> <%= link_to 'Sistema de Entregas', root_path, class: 'home-button' %></h1>
       </div>
 
-      <% unless admin_signed_in? %>
+      <% unless admin_signed_in? || user_signed_in? %>
         <div class="menu-content">
           <ul class="menu-list">
-            <li>Entrar</li>
-            <li>Cadastrar</li>
+            <li> <%= link_to 'Entrar', new_user_session_path %> </li>
+            <li> <%= link_to 'Cadastrar-se', new_user_registration_path %> </li>
           </ul>
         </div>
       <% else %>
         <div class="entity-container">
           <p class="current-entity">
-            <span>Admin:</span> <%= current_admin.email %>
+            <% if admin_signed_in? %>
+              <span> <%= current_admin.model_name.human %>: </span> <%= current_admin.email %>
+              <%= button_to 'Sair', destroy_admin_session_path, method: :delete %>
+            <% elsif user_signed_in? %>
+              <span> <%= current_user.model_name.human %>: </span> <%= current_user.email %>
+              <%= button_to 'Sair', destroy_user_session_path, method: :delete %>
+            <% end %>
           </p>
-          <%= button_to 'Sair', destroy_admin_session_path, method: :delete %>
         </div>
       <% end %>
     </header>
