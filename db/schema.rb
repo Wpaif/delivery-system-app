@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_20_001701) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_21_211518) do
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -48,5 +48,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_20_001701) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "vehicles", force: :cascade do |t|
+    t.string "plate"
+    t.string "brand"
+    t.string "model"
+    t.datetime "manufacturin_year"
+    t.integer "capacity"
+    t.integer "carrier_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["carrier_id"], name: "index_vehicles_on_carrier_id"
+  end
+
   add_foreign_key "users", "carriers"
+  add_foreign_key "vehicles", "carriers"
 end
