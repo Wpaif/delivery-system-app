@@ -5,7 +5,7 @@ describe 'Administrador se registra' do
     # Act
     visit new_admin_registration_path
     within('form') do
-      fill_in 'Email', with: 'admin@admin.com'
+      fill_in 'Email', with: 'admin@sistemadefretes.com.br'
       fill_in 'Senha', with: '123456'
       fill_in 'Confirme sua senha', with: '123456'
       click_on 'Registrar-se'
@@ -14,7 +14,7 @@ describe 'Administrador se registra' do
     # Assert
     expect(page).to have_content 'Bem vindo! Você realizou seu registro com sucesso.'
     within('header') do
-      expect(page).to have_content 'Administrador: admin@admin.com'
+      expect(page).to have_content 'Administrador: admin@sistemadefretes.com.br'
       expect(page).to have_button 'Sair'
     end
   end

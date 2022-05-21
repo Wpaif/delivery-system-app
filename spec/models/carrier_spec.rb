@@ -1,9 +1,5 @@
 require 'rails_helper'
 
-# Carrier.create!(brand_name: 'Pirate Dispatch Organization', corporate_name: "Buggy's Delivery",
-#   email_domain: 'buggy.com', registered_number: '00.112.112/0001-39',
-#   billing_address: 'Karai Bari Island', enable: true)
-
 # rubocop:disable Metrics/BlockLength
 RSpec.describe Carrier, type: :model do
   describe '#valid?' do

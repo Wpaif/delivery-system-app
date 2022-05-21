@@ -4,7 +4,7 @@ require 'rails_helper'
 describe 'Administrador vê detalhes de uma transportadora' do
   it 'e vê sua página de detalhes' do
     # Arrage
-    Admin.create!(email: 'admin@admin.com', password: '123456')
+    Admin.create!(email: 'admin@sistemadefretes.com.br', password: '123456')
 
     Carrier.create!(brand_name: 'Pirate Dispatch Organization', corporate_name: "Buggy's Delivery",
                     email_domain: 'buggy.com', registered_number: '00.112.112/0001-39',
@@ -13,7 +13,7 @@ describe 'Administrador vê detalhes de uma transportadora' do
     # Act
     visit admin_path
     within('form') do
-      fill_in 'Email', with: 'admin@admin.com'
+      fill_in 'Email', with: 'admin@sistemadefretes.com.br'
       fill_in 'Senha', with: '123456'
       click_on 'Entrar'
     end
@@ -43,7 +43,7 @@ describe 'Administrador vê detalhes de uma transportadora' do
 
   it 'e volta para a listagem' do
     # Arrage
-    Admin.create!(email: 'admin@admin.com', password: '123456')
+    Admin.create!(email: 'admin@sistemadefretes.com.br', password: '123456')
 
     Carrier.create!(brand_name: 'Pirate Dispatch Organization', corporate_name: "Buggy's Delivery",
                     email_domain: 'buggy.com', registered_number: '00.112.112/0001-39',
@@ -52,7 +52,7 @@ describe 'Administrador vê detalhes de uma transportadora' do
     # Act
     visit admin_path
     within('form') do
-      fill_in 'Email', with: 'admin@admin.com'
+      fill_in 'Email', with: 'admin@sistemadefretes.com.br'
       fill_in 'Senha', with: '123456'
       click_on 'Entrar'
     end

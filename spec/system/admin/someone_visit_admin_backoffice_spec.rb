@@ -11,12 +11,12 @@ describe 'Alguém visita o backoffice administrativo' do
 
   it 'com sucesso' do
     # Arrange
-    Admin.create!(email: 'wilian@admin.com', password: '123456')
+    Admin.create!(email: 'wilian@sistemadefretes.com.br', password: '123456')
 
     # Act
     visit admin_path
     within('form') do
-      fill_in 'Email', with: 'wilian@admin.com'
+      fill_in 'Email', with: 'wilian@sistemadefretes.com.br'
       fill_in 'Senha', with: '123456'
       click_on 'Entrar'
     end
