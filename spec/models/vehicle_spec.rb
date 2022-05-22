@@ -10,7 +10,7 @@ RSpec.describe Vehicle, type: :model do
                        billing_address: 'Karai Bari Island', enable: true)
 
         vehicle = Vehicle.new(plate: '', brand: 'Wayne Enterprises', model: 'Batmovel',
-                              manufacturin_year: '2000-04-14', capacity: 10_000, carrier_id: Carrier.first.id)
+                              manufacturin_year: '2000', capacity: 10_000, carrier_id: Carrier.first.id)
 
         expect(vehicle.valid?).to eq false
       end
@@ -21,7 +21,7 @@ RSpec.describe Vehicle, type: :model do
                        billing_address: 'Karai Bari Island', enable: true)
 
         vehicle = Vehicle.new(plate: 'BAT3001', brand: '', model: 'Batmovel',
-                              manufacturin_year: '2000-04-14', capacity: 10_000, carrier_id: Carrier.first.id)
+                              manufacturin_year: '2000', capacity: 10_000, carrier_id: Carrier.first.id)
 
         expect(vehicle.valid?).to eq false
       end
@@ -32,7 +32,7 @@ RSpec.describe Vehicle, type: :model do
                        billing_address: 'Karai Bari Island', enable: true)
 
         vehicle = Vehicle.new(plate: 'BAT3001', brand: 'Wayne Enterprises', model: '',
-                              manufacturin_year: '2000-04-14', capacity: 10_000, carrier_id: Carrier.first.id)
+                              manufacturin_year: '2000', capacity: 10_000, carrier_id: Carrier.first.id)
 
         expect(vehicle.valid?).to eq false
       end
@@ -54,7 +54,7 @@ RSpec.describe Vehicle, type: :model do
                        billing_address: 'Karai Bari Island', enable: true)
 
         vehicle = Vehicle.new(plate: 'BAT3001', brand: 'Wayne Enterprises', model: 'Batmovel',
-                              manufacturin_year: '2000-04-14', capacity: '', carrier_id: Carrier.first.id)
+                              manufacturin_year: '2000', capacity: '', carrier_id: Carrier.first.id)
 
         expect(vehicle.valid?).to eq false
       end
@@ -67,7 +67,7 @@ RSpec.describe Vehicle, type: :model do
                        billing_address: 'Karai Bari Island', enable: true)
 
         vehicle = Vehicle.new(plate: 'STK00A3', brand: 'Stark Enterprises', model: 'M-43',
-                              manufacturin_year: '2010-10-08', capacity: 100_000,
+                              manufacturin_year: '2010', capacity: 100_000,
                               carrier_id: Carrier.first.id)
 
         expect(vehicle.valid?).to eq false
@@ -81,7 +81,7 @@ RSpec.describe Vehicle, type: :model do
                        billing_address: 'Karai Bari Island', enable: true)
 
         vehicle = Vehicle.new(plate: 'STK00A3', brand: 'Stark Enterprises', model: 'M-43',
-                              manufacturin_year: '5000-10-08', capacity: 100_000,
+                              manufacturin_year: '5000', capacity: 100_000,
                               carrier_id: Carrier.first.id)
 
         expect(vehicle.valid?).to eq false

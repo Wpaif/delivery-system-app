@@ -1,0 +1,25 @@
+<h2> <%= "#{@vehicle.model} - #{@vehicle.plate}" %> </h2>
+
+<dl>
+  <div class="description-list-container">
+    <dt>Placa:</dt>
+    <dd> <%= @vehicle.plate %> </dd>
+  </div>
+
+   <div class="description-list-container">
+    <dt>Marca:</dt>
+    <dd> <%= @vehicle.brand %> </dd>
+  </div>
+
+   <div class="description-list-container">
+    <dt>Ano de Fabricação:</dt>
+    <dd> <%= @vehicle.manufacturin_year %> </dd>
+  </div>
+
+   <div class="description-list-container">
+    <dt>Capacidade:</dt>
+    <dd> <%= @vehicle.capacity %> </dd>
+  </div>
+</dl>
+
+<%= link_to 'Voltar', users_backoffice_vehicles_path, class: 'back-button' %>

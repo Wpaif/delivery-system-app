@@ -21,7 +21,9 @@
           <td> <%= vehicle.model %> </td>
           <td> <%= vehicle.manufacturin_year %> </td>
           <td> <%= vehicle.capacity %> </td>
-          <td></td>
+          <td>
+            <%= link_to 'Detalhes', users_backoffice_vehicle_path(vehicle.id) %>
+          </td>
         </tr>
       <% end %>
     </tbody>
@@ -29,3 +31,5 @@
 <% else %>
   <p>Não há veículos registrados</p>
 <% end %>
+
+<%= link_to 'Voltar', users_backoffice_welcome_index_path, class: 'back-button' %>
