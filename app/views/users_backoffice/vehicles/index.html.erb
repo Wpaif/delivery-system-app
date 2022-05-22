@@ -1,0 +1,31 @@
+<h2> Veículos de <%= current_user.carrier.brand_name %> </h2>
+
+<% if @vehicles.any? %>
+  <table>
+    <thead>
+      <tr>
+        <th>Placa</th>
+        <th>Marca</th>
+        <th>Modelo</th>
+        <th>Ano de Fabricação</th>
+        <th>Capacidade</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @vehicles.each do |vehicle| %>
+        <tr>
+          <td> <%= vehicle.plate %> </td>
+          <td> <%= vehicle.brand %> </td>
+          <td> <%= vehicle.model %> </td>
+          <td> <%= vehicle.manufacturin_year %> </td>
+          <td> <%= vehicle.capacity %> </td>
+          <td></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>Não há veículos registrados</p>
+<% end %>
