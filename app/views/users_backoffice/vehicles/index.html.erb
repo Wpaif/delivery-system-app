@@ -9,7 +9,7 @@
         <th>Modelo</th>
         <th>Ano de Fabricação</th>
         <th>Capacidade</th>
-        <th></th>
+        <th> <%= link_to 'Registrar', new_users_backoffice_vehicle_path %> </th>
       </tr>
     </thead>
 
@@ -19,7 +19,7 @@
           <td> <%= vehicle.plate %> </td>
           <td> <%= vehicle.brand %> </td>
           <td> <%= vehicle.model %> </td>
-          <td> <%= vehicle.manufacturin_year %> </td>
+          <td> <%= vehicle.manufacturing_year %> </td>
           <td> <%= vehicle.capacity %> </td>
           <td>
             <%= link_to 'Detalhes', users_backoffice_vehicle_path(vehicle.id) %>

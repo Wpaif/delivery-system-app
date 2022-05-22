@@ -4,7 +4,7 @@ class CreateVehicles < ActiveRecord::Migration[7.0]
       t.string :plate
       t.string :brand
       t.string :model
-      t.integer :manufacturin_year
+      t.integer :manufacturing_year
       t.integer :capacity
       t.references :carrier, null: false, foreign_key: true
 

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   namespace :users_backoffice do
-    resources :vehicles, only: %i[index show]
+    resources :vehicles, only: %i[index show new create]
     get 'welcome/index'
   end
   get '/user' => 'users_backoffice/welcome#index', :as => :user_root

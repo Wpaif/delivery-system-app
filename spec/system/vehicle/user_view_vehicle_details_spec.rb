@@ -10,7 +10,7 @@ describe 'Usuário vê detalhes de um veículo' do
     user = User.create!(email: 'Wilian@buggy.com', password: '123456', carrier_id: Carrier.first.id)
 
     Vehicle.create!(plate: 'BAT0403', brand: 'Wayne Enterprises', model: 'Batmovel',
-                    manufacturin_year: '2000', capacity: 10_000, carrier_id: Carrier.first.id)
+                    manufacturing_year: '2000', capacity: 10_000, carrier_id: Carrier.first.id)
 
     login_as(user)
     visit users_backoffice_welcome_index_path
@@ -39,7 +39,7 @@ describe 'Usuário vê detalhes de um veículo' do
     user = User.create!(email: 'Wilian@buggy.com', password: '123456', carrier_id: Carrier.first.id)
 
     Vehicle.create!(plate: 'BAT0403', brand: 'Wayne Enterprises', model: 'Batmovel',
-                    manufacturin_year: '2000', capacity: 10_000, carrier_id: Carrier.first.id)
+                    manufacturing_year: '2000', capacity: 10_000, carrier_id: Carrier.first.id)
 
     login_as(user)
     visit users_backoffice_welcome_index_path

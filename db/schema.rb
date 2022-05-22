@@ -52,7 +52,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_21_211518) do
     t.string "plate"
     t.string "brand"
     t.string "model"
-    t.integer "manufacturin_year"
+    t.integer "manufacturing_year"
     t.integer "capacity"
     t.integer "carrier_id", null: false
     t.datetime "created_at", null: false

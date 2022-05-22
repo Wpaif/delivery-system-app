@@ -1,0 +1,12 @@
+pt-BR:
+  activerecord:
+    models:
+      vehicle: Veículo
+    attributes:
+      vehicle:
+        plate: Placa
+        brand: Marca
+        model: Modelo
+        manufacturing_year: Ano de Fabricação
+        capacity: Capacidade
+        carrier_id: Transportadora

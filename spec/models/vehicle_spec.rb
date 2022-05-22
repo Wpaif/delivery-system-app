@@ -10,7 +10,7 @@ RSpec.describe Vehicle, type: :model do
                        billing_address: 'Karai Bari Island', enable: true)
 
         vehicle = Vehicle.new(plate: '', brand: 'Wayne Enterprises', model: 'Batmovel',
-                              manufacturin_year: '2000', capacity: 10_000, carrier_id: Carrier.first.id)
+                              manufacturing_year: '2000', capacity: 10_000, carrier_id: Carrier.first.id)
 
         expect(vehicle.valid?).to eq false
       end
@@ -21,7 +21,7 @@ RSpec.describe Vehicle, type: :model do
                        billing_address: 'Karai Bari Island', enable: true)
 
         vehicle = Vehicle.new(plate: 'BAT3001', brand: '', model: 'Batmovel',
-                              manufacturin_year: '2000', capacity: 10_000, carrier_id: Carrier.first.id)
+                              manufacturing_year: '2000', capacity: 10_000, carrier_id: Carrier.first.id)
 
         expect(vehicle.valid?).to eq false
       end
@@ -32,7 +32,7 @@ RSpec.describe Vehicle, type: :model do
                        billing_address: 'Karai Bari Island', enable: true)
 
         vehicle = Vehicle.new(plate: 'BAT3001', brand: 'Wayne Enterprises', model: '',
-                              manufacturin_year: '2000', capacity: 10_000, carrier_id: Carrier.first.id)
+                              manufacturing_year: '2000', capacity: 10_000, carrier_id: Carrier.first.id)
 
         expect(vehicle.valid?).to eq false
       end
@@ -43,7 +43,7 @@ RSpec.describe Vehicle, type: :model do
                        billing_address: 'Karai Bari Island', enable: true)
 
         vehicle = Vehicle.new(plate: 'BAT3001', brand: 'Wayne Enterprises', model: 'Batmovel',
-                              manufacturin_year: '', capacity: 10_000, carrier_id: Carrier.first.id)
+                              manufacturing_year: '', capacity: 10_000, carrier_id: Carrier.first.id)
 
         expect(vehicle.valid?).to eq false
       end
@@ -54,7 +54,7 @@ RSpec.describe Vehicle, type: :model do
                        billing_address: 'Karai Bari Island', enable: true)
 
         vehicle = Vehicle.new(plate: 'BAT3001', brand: 'Wayne Enterprises', model: 'Batmovel',
-                              manufacturin_year: '2000', capacity: '', carrier_id: Carrier.first.id)
+                              manufacturing_year: '2000', capacity: '', carrier_id: Carrier.first.id)
 
         expect(vehicle.valid?).to eq false
       end
@@ -67,7 +67,7 @@ RSpec.describe Vehicle, type: :model do
                        billing_address: 'Karai Bari Island', enable: true)
 
         vehicle = Vehicle.new(plate: 'STK00A3', brand: 'Stark Enterprises', model: 'M-43',
-                              manufacturin_year: '2010', capacity: 100_000,
+                              manufacturing_year: '2010', capacity: 100_000,
                               carrier_id: Carrier.first.id)
 
         expect(vehicle.valid?).to eq false
@@ -81,7 +81,24 @@ RSpec.describe Vehicle, type: :model do
                        billing_address: 'Karai Bari Island', enable: true)
 
         vehicle = Vehicle.new(plate: 'STK00A3', brand: 'Stark Enterprises', model: 'M-43',
-                              manufacturin_year: '5000', capacity: 100_000,
+                              manufacturing_year: '5000', capacity: 100_000,
+                              carrier_id: Carrier.first.id)
+
+        expect(vehicle.valid?).to eq false
+      end
+    end
+
+    context 'uniqueness' do
+      it 'inválido quando a data de fabricação informada está no futuro' do
+        Carrier.create(brand_name: 'Pirate Dispatch Organization', corporate_name: "Buggy's Delivery",
+                       email_domain: 'buggy.com', registered_number: '00.112.112/0001-39',
+                       billing_address: 'Karai Bari Island', enable: true)
+
+        Vehicle.create(plate: 'STK00A3', brand: 'Stark Enterprises', model: 'M-43',
+                       manufacturing_year: '2022', capacity: 100_000, carrier_id: Carrier.first.id)
+
+        vehicle = Vehicle.new(plate: 'STK00A3', brand: 'Wayne Enterprises', model: 'Batmovel',
+                              manufacturing_year: '2000', capacity: 200_000,
                               carrier_id: Carrier.first.id)
 
         expect(vehicle.valid?).to eq false

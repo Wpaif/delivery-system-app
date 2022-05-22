@@ -10,10 +10,10 @@ describe 'Usuário vê todas os veículos de sua transportadora registrados' do
     user = User.create!(email: 'Wilian@buggy.com', password: '123456', carrier_id: Carrier.first.id)
 
     Vehicle.create!(plate: 'BAT0403', brand: 'Wayne Enterprises', model: 'Batmovel',
-                    manufacturin_year: '2000', capacity: 10_000, carrier_id: Carrier.first.id)
+                    manufacturing_year: '2000', capacity: 10_000, carrier_id: Carrier.first.id)
 
     Vehicle.create!(plate: 'STK7777', brand: 'Stark Enterprises', model: 'M-43',
-                    manufacturin_year: '2010', capacity: 100_000, carrier_id: Carrier.first.id)
+                    manufacturing_year: '2010', capacity: 100_000, carrier_id: Carrier.first.id)
 
     login_as(user)
     visit users_backoffice_welcome_index_path
