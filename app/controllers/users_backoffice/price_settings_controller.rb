@@ -22,6 +22,6 @@ class UsersBackoffice::PriceSettingsController < UsersBackofficeController
   private
 
   def price_setting_params
-    params.require(:price_setting).permit(:lower_limit, :upper_limit, :value, :carrier_id)
+    params.require(:price_setting).permit(:lower_limit, :upper_limit, :value)
   end
 end

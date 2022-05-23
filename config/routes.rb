@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   namespace :users_backoffice do
-    resources :deadlines, only: %i[index]
+    resources :deadlines, only: %i[index new create]
     resources :price_settings, only: %i[index new create]
     resources :vehicles, only: %i[index show new create]
     get 'welcome/index'

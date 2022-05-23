@@ -1,0 +1,10 @@
+pt-BR:
+  activerecord:
+    models:
+      deadline: Prazo
+    attributes:
+      deadline:
+        lower_limit: Limite inferior
+        upper_limit: Limite superior
+        days: Dias para entrega
+        carrier_id: Transportadora

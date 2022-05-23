@@ -1,5 +1,7 @@
 <h2>Prazos registrados</h2>
 
+<%= link_to 'Novo prazo', new_users_backoffice_deadline_path %>
+
 <% if @deadlines.any? %>
   <dl>
     <% @deadlines.each do |deadline| %>

@@ -1,17 +1,17 @@
-<h2>Nova configuração de preço</h2>
+<h2>Novo prazo</h2>
 
-<% if @price_setting.errors.any? %>
+<% if @deadline.errors.any? %>
   <div>
     <p>Verifique os erros abaixo:</p>
     <ul>
-      <% @price_setting.errors.full_messages.each do |message| %>
+      <% @deadline.errors.full_messages.each do |message| %>
         <li> <%= message %> </li>
       <% end %>
     </ul>
   </div>
 <% end %>
 
-<%= form_with model: [:users_backoffice, @price_setting] do |f| %>
+<%= form_with model: [:users_backoffice, @deadline] do |f| %>
   <div>
     <%= f.label :lower_limit %>
     <%= f.number_field :lower_limit %>
@@ -23,8 +23,8 @@
   </div>
 
   <div>
-    <%= f.label :value %>
-    <%= f.number_field :value %>
+    <%= f.label :days %>
+    <%= f.number_field :days %>
   </div>
 
   <div>
@@ -32,4 +32,4 @@
   </div>
 <% end %>
 
-<%= link_to 'Voltar', users_backoffice_price_settings_path, class: 'back-button' %>
+<%= link_to 'Voltar', users_backoffice_deadlines_path, class: 'back-button' %>
