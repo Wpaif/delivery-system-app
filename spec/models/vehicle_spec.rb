@@ -89,7 +89,7 @@ RSpec.describe Vehicle, type: :model do
     end
 
     context 'uniqueness' do
-      it 'inválido quando a data de fabricação informada está no futuro' do
+      it 'inválido uma placa já foi cadastrada' do
         Carrier.create(brand_name: 'Pirate Dispatch Organization', corporate_name: "Buggy's Delivery",
                        email_domain: 'buggy.com', registered_number: '00.112.112/0001-39',
                        billing_address: 'Karai Bari Island', enable: true)

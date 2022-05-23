@@ -1,0 +1,16 @@
+<h2>Configurações de preços por kilometro</h2>
+
+<% if  @price_settings.any? %>
+  <dl>
+    <% @price_settings.each do |setting| %>
+      <div class="description-list-container">
+        <dt> <strong>De <%= "#{setting.lower_limit}Kg - #{setting.upper_limit}Kg:" %> </strong> </dt>
+        <dd> R$: <%= setting.value.to_f %> </dd>
+      </div>
+    <% end %>
+  </dl>
+<% else %>
+  <p>Não há configurações de preços registradas</p>
+<% end %>
+
+<%= link_to 'Voltar', users_backoffice_welcome_index_path, class: 'back-button'%>
