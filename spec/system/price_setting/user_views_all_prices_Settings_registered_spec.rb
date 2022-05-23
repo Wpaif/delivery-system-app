@@ -30,7 +30,7 @@ describe 'Usuário vê todas as configurações de preços' do
                     email_domain: 'buggy.com', registered_number: '00.112.112/0001-39',
                     billing_address: 'Karai Bari Island', enable: true)
 
-    user = User.create!(email: 'Wilian@buggy.com', password: '123456', carrier_id: Carrier.first.id)
+    user = User.create!(email: 'wilian@buggy.com', password: '123456', carrier_id: Carrier.first.id)
     login_as(user)
     visit users_backoffice_welcome_index_path
     click_on 'Configurações de preços'
