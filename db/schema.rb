@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_23_025219) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_23_060002) do
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -32,6 +32,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_23_025219) do
     t.boolean "enable"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "deadlines", force: :cascade do |t|
+    t.integer "lower_limit"
+    t.integer "upper_limit"
+    t.integer "days"
+    t.integer "carrier_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["carrier_id"], name: "index_deadlines_on_carrier_id"
   end
 
   create_table "price_settings", force: :cascade do |t|
@@ -70,6 +80,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_23_025219) do
     t.index ["carrier_id"], name: "index_vehicles_on_carrier_id"
   end
 
+  add_foreign_key "deadlines", "carriers"
   add_foreign_key "price_settings", "carriers"
   add_foreign_key "users", "carriers"
   add_foreign_key "vehicles", "carriers"

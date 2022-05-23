@@ -1,0 +1,16 @@
+<h2>Prazos registrados</h2>
+
+<% if @deadlines.any? %>
+  <dl>
+    <% @deadlines.each do |deadline| %>
+      <div class="description-list-container">
+        <td> <strong>De <%= "#{deadline.lower_limit}Km - #{deadline.upper_limit}Km" %>: </strong> </td>
+        <dd> <%= deadline.days %> dias</dd>
+      </div>
+    <% end %>
+  </dl>
+<% else %>
+  <p class="alert">Não há prazos cadastrados.</p>
+<% end %>
+
+<%= link_to 'Voltar', users_backoffice_price_settings_path, class: 'back-button' %>
