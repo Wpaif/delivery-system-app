@@ -1,0 +1,10 @@
+pt-BR:
+  activerecord:
+    models:
+      price_setting: Configuração de Preço
+    attributes:
+      price_setting:
+        lower_limit: Limite inferior
+        upper_limit: Limite superior
+        value: Valor por kilometro
+        carrier_id: Transportadora

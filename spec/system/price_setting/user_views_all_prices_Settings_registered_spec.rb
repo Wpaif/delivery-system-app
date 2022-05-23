@@ -18,8 +18,8 @@ describe 'Usuário vê todas as configurações de preços' do
 
     expect(page).to have_css 'h2', text: 'Configurações de preços por kilometro'
     within('dl') do
-      expect(page).to have_content 'De 0Kg - 100Kg: R$: 10.0'
-      expect(page).to have_content 'De 101Kg - 1000Kg: R$: 15.0'
+      expect(page).to have_content 'De 0Kg - 100Kg: R$ 10.0'
+      expect(page).to have_content 'De 101Kg - 1000Kg: R$ 15.0'
     end
 
     expect(page).to have_css 'a', text: 'Voltar'

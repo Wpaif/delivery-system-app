@@ -1,0 +1,33 @@
+<h2>Nova configuração de preço</h2>
+
+<% if @price_setting.errors.any? %>
+  <div>
+    <p>Verifique os erros abaixo:</p>
+    <ul>
+      <% @price_setting.errors.full_messages.each do |message| %>
+        <li> <%= message %> </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_with model: [:users_backoffice, @price_setting] do |f| %>
+  <div>
+    <%= f.label :lower_limit %>
+    <%= f.number_field :lower_limit %>
+  </div>
+
+  <div>
+    <%= f.label :upper_limit %>
+    <%= f.number_field :upper_limit %>
+  </div>
+
+  <div>
+    <%= f.label :value %>
+    <%= f.number_field :value %>
+  </div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
