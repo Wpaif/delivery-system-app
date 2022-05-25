@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 # rubocop:disable Metrics/BlockLength
-describe 'Usuário comum faz consulta de valores' do
-  it 'e vê o formulário na página de boas vindas do usuário' do
+describe 'Administrador faz consulta de valores' do
+  it 'e vê o formulário para tal' do
     Carrier.create!(brand_name: 'Carrara', corporate_name: 'Transportadora Carrara LTDA',
                     email_domain: 'carrara.com', registered_number: '10.117.111/7591-77',
                     billing_address: 'Rua N° 0', enable: true)
@@ -11,16 +11,20 @@ describe 'Usuário comum faz consulta de valores' do
     PriceSetting.create!(lower_limit: 101, upper_limit: 1000, value: 15, carrier_id: Carrier.first.id)
 
     Deadline.create!(lower_limit: 0, upper_limit: 100, days: 10, carrier_id: Carrier.first.id)
-    Deadline.create!(lower_limit: 101, upper_limit: 1000, days: 15, carrier_id: Carrier.first.id)
+    Deadline.create!(lower_limit: 101, upper_limit: 1000, days: 25, carrier_id: Carrier.first.id)
 
-    user = User.create(email: 'wilian@gmail.com', password: '123456')
+    Admin.create!(email: 'wilian@sistemadefretes.com.br', password: '123456')
 
-    login_as(user)
+    visit admin_path
+    within('form') do
+      fill_in 'Email', with: 'wilian@sistemadefretes.com.br'
+      fill_in 'Senha', with: '123456'
+      click_on 'Entrar'
+    end
 
-    visit users_backoffice_welcome_index_path
     click_on 'Consultar valores'
 
-    expect(current_path).to eq users_backoffice_budgets_path
+    expect(current_path).to eq admins_backoffice_budgets_path
 
     expect(page).to have_field 'Transportadora'
     expect(page).to have_field 'Distância até a transportadora'
@@ -39,11 +43,15 @@ describe 'Usuário comum faz consulta de valores' do
     Deadline.create!(lower_limit: 0, upper_limit: 100, days: 10, carrier_id: Carrier.first.id)
     Deadline.create!(lower_limit: 101, upper_limit: 1000, days: 15, carrier_id: Carrier.first.id)
 
-    user = User.create(email: 'wilian@gmail.com', password: '123456')
+    Admin.create!(email: 'wilian@sistemadefretes.com.br', password: '123456')
 
-    login_as(user)
+    visit admin_path
+    within('form') do
+      fill_in 'Email', with: 'wilian@sistemadefretes.com.br'
+      fill_in 'Senha', with: '123456'
+      click_on 'Entrar'
+    end
 
-    visit users_backoffice_welcome_index_path
     click_on 'Consultar valores'
 
     select 'Carrara', from: 'Transportadora'
@@ -51,7 +59,7 @@ describe 'Usuário comum faz consulta de valores' do
     fill_in 'Peso', with: '100'
     click_on 'Consultar'
 
-    expect(current_path).to eq users_backoffice_budget_result_path
+    expect(current_path).to eq admins_backoffice_budget_result_path
     expect(page).to have_content 'Valor: R$ 1.000,00'
     expect(page).to have_content "Previsão de entrega: #{I18n.l(Deadline.first.days.day.from_now, format: :short)}"
   end
@@ -67,10 +75,15 @@ describe 'Usuário comum faz consulta de valores' do
     Deadline.create!(lower_limit: 0, upper_limit: 100, days: 10, carrier_id: Carrier.first.id)
     Deadline.create!(lower_limit: 101, upper_limit: 1000, days: 15, carrier_id: Carrier.first.id)
 
-    user = User.create(email: 'wilian@gmail.com', password: '123456')
+    Admin.create!(email: 'wilian@sistemadefretes.com.br', password: '123456')
 
-    login_as(user)
-    visit users_backoffice_welcome_index_path
+    visit admin_path
+    within('form') do
+      fill_in 'Email', with: 'wilian@sistemadefretes.com.br'
+      fill_in 'Senha', with: '123456'
+      click_on 'Entrar'
+    end
+
     click_on 'Consultar valores'
 
     fill_in 'Distância até a transportadora', with: ''
@@ -91,10 +104,15 @@ describe 'Usuário comum faz consulta de valores' do
     Deadline.create!(lower_limit: 0, upper_limit: 100, days: 10, carrier_id: Carrier.first.id)
     Deadline.create!(lower_limit: 101, upper_limit: 1000, days: 15, carrier_id: Carrier.first.id)
 
-    user = User.create(email: 'wilian@gmail.com', password: '123456')
+    Admin.create!(email: 'wilian@sistemadefretes.com.br', password: '123456')
 
-    login_as(user)
-    visit users_backoffice_welcome_index_path
+    visit admin_path
+    within('form') do
+      fill_in 'Email', with: 'wilian@sistemadefretes.com.br'
+      fill_in 'Senha', with: '123456'
+      click_on 'Entrar'
+    end
+
     click_on 'Consultar valores'
 
     fill_in 'Distância até a transportadora', with: '10000'
