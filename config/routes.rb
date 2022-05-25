@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     resources :price_settings, only: %i[index new create]
     resources :vehicles, only: %i[index show new create]
     get 'welcome/index'
+    get 'budgets', to: 'welcome#budgets'
+    get 'budget_result', to: 'welcome#budget_result'
   end
   get '/user' => 'users_backoffice/welcome#index', :as => :user_root
   devise_for :users

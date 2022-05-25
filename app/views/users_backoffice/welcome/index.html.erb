@@ -1,5 +1,11 @@
 <h1>Área do usuário</h1>
 
-<%= link_to 'Veículos', users_backoffice_vehicles_path %>
-<%= link_to 'Configurações de preços', users_backoffice_price_settings_path %>
-<%= link_to 'Prazos', users_backoffice_deadlines_path %>
+
+<% if current_user.carrier_id %>
+  <%= link_to 'Veículos', users_backoffice_vehicles_path %>
+  <%= link_to 'Configurações de preços', users_backoffice_price_settings_path %>
+  <%= link_to 'Prazos', users_backoffice_deadlines_path %>
+<% end %>
+
+<%= link_to 'Consultar valores', users_backoffice_budgets_path %>
+

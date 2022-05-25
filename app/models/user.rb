@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  belongs_to :carrier
+  belongs_to :carrier, optional: true
 
   before_validation :set_carrier
 

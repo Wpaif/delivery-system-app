@@ -1,0 +1,22 @@
+<h1>Orçamento do pedido</h1>
+
+<% if @error %>
+  <p class="alert">Dados inválidos.</p>
+<% elsif !@deadline.methods.include?(:days) || !@price_setting.methods.include?(:value)%>
+  <p class="alert" style="width: 652px">O valores informados não são atendidos por essa transportadora.</p>
+<% else %>
+  <dl>
+    <div class="description-list-container">
+      <dt><strong>Valor:</strong></dt>
+      <dd><%= number_to_currency(@price_setting.value * @weigth) %></dd>
+    </div>
+    
+    <div class="description-list-container">
+      <dt><strong>Previsão de entrega:</strong></dt>
+      <dd><%= I18n.localize(@deadline.days.day.from_now, format: :short) %></dd>
+    </div>
+  </dl>
+<% end %>
+  
+
+<%= link_to 'Voltar', users_backoffice_budgets_path, class: 'back-button' %>

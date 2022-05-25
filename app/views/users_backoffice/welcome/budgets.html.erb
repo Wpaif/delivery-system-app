@@ -1,0 +1,28 @@
+<h2>Consulte o orçamento</h2>
+
+<% if @carriers.any? %>
+  <%= form_with url: users_backoffice_budget_result_path, method: :get do |f| %>
+
+    <div>
+      <%= f.label :carrier_id, 'Transportadora' %>
+      <%= f.collection_select :carrier_id, @carriers, :id, :brand_name %>
+    </div>
+
+    <div>
+      <%= f.label :distance, "Distância até a transportadora" %>
+      <%= f.number_field :distance %>
+    </div>
+
+    <div>
+      <%= f.label :weigth, 'Peso' %>
+      <%= f.number_field :weigth %>
+    </div>
+
+    <%= f.submit "Consultar" %>
+  <% end %>
+<% else %>
+  <p class="alert">Não há transportadora disponíveis.</p>
+<% end %>
+
+
+ <%= link_to 'Voltar', users_backoffice_welcome_index_path, class: 'back-button' %>
