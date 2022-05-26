@@ -1,0 +1,21 @@
+pt-BR:
+  activerecord:
+    models:
+      order: Pedido
+    attributes:
+      order:
+        id: ID
+        recipient: Destinatário
+        postal_code: CEP
+        city: Cidade
+        street: Rua
+        number: Número
+        weight: Peso
+        distance: Distância
+        code: Código
+        vahicle_id: Veículo
+        vehicle: Veículo
+        carrier_id: Transportadora
+        carrier: Transportadora
+        created_at: Criado em
+        updated_at: Atualizado em

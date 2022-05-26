@@ -1,0 +1,42 @@
+<h2>Cadastro de ordem de serviço</h2>
+
+<%= form_with model: [:admins_backoffice, @order] do |f| %>
+  <div>
+    <%= f.label :recipient %>
+    <%= f.text_field :recipient %>
+  </div>
+
+  <div>
+    <%= f.label :postal_code %>
+    <%= f.text_field :postal_code %>
+  </div>
+
+  <div>
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+  </div>
+
+  <div>
+    <%= f.label :street %>
+    <%= f.text_field :street %>
+  </div>
+
+  <div>
+    <%= f.label :number %>
+    <%= f.number_field :number %>
+  </div>
+
+  <div>
+    <%= f.label :weight %>
+    <%= f.number_field :weight %>
+  </div>
+
+  <div>
+    <%= f.label :distance %>
+    <%= f.number_field :distance %>
+  </div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
