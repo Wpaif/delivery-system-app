@@ -103,11 +103,16 @@ describe 'Adiministrador registra um pedido' do
     click_on 'Nova ordem de serviço'
 
     fill_in 'Destinatário', with: 'Monkey D. Luffy'
-    fill_in 'CEP', with: '90990-000'
+    fill_in 'CEP', with: '9099-000'
     fill_in 'Cidade', with: 'Vila Foosha'
     fill_in 'Rua', with: 'Meat Street'
     fill_in 'Número', with: '0'
     fill_in 'Peso', with: '100'
+    select 'Pirate Dispatch Organization', from: 'Transportadora'
+    click_on 'Criar Ordem de Serviço'
+
+    expect(page).to have_content 'Distância não pode ficar em branco'
+    expect(page).to have_content 'CEP não é válido'
   end
 end
 # rubocop:enable Metrics/BlockLength
