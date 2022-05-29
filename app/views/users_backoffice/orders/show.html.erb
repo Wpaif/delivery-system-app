@@ -1,0 +1,60 @@
+<h2> Ordem de serviço </h2>
+
+<dl>
+  <div class="description-list-container">
+    <dt><strong>Destinatário:</strong></dt>
+    <dd><%= @order.recipient %></dd>
+  </div>
+
+  <div class="description-list-container">
+    <dt><strong>CEP:</strong></dt>
+    <dd><%= @order.postal_code %></dd>
+  </div>
+
+  <div class="description-list-container">
+    <dt><strong>Cidade:</strong></dt>
+    <dd><%= @order.city %></dd>
+  </div>
+
+  <div class="description-list-container">
+    <dt><strong>Rua:</strong></dt>
+    <dd><%= @order.street %></dd>
+  </div>
+
+  <div class="description-list-container">
+    <dt><strong>Número:</strong></dt>
+    <dd><%= @order.number %></dd>
+  </div>
+
+  <div class="description-list-container">
+    <dt><strong>Peso:</strong></dt>
+    <dd><%= @order.weight %>Kg</dd>
+  </div>
+
+  <div class="description-list-container">
+    <dt><strong>Distância:</strong></dt>
+    <dd><%= @order.distance %>Km</dd>
+  </div>
+
+  <div class="description-list-container">
+    <dt><strong>Valor:</strong></dt>
+    <dd><%= number_to_currency(@value) %></dd>
+  </div>
+
+  <% if !@order.delivered? && @order.estimated_delivery_date %>
+    <div class="description-list-container">
+      <dt><strong>Data estimada para entrega:</strong></dt>
+      <dd><%= I18n.l(@order.estimated_delivery_date, format: :short) %></dd>
+    </div>
+   <% end %>
+
+   <div class="description-list-container">
+    <dt><strong>Status:</strong></dt>
+    <dd><%= @order.status %>  </dd>
+  </div>
+</dl>   
+
+<% if @order.pending? && @vehicles %>
+  <%= link_to 'Aceitar', edit_users_backoffice_order_path(@order), class: 'accept-button' %>
+<% end %>
+<%= link_to 'Voltar', users_backoffice_orders_path, class: 'back-button' %>

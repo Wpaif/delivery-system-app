@@ -149,6 +149,16 @@ main a.back-button {
   font-weight: bold;    
 }
 
+main a.accept-button {
+  color: #FFF;
+  font-weight: 100;
+  text-decoration: none;
+  background-color: #00ff37;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;    
+}
+
 main a.register-button{
   color: #FFF;
   font-weight: 100;

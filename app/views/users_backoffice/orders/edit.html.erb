@@ -1,0 +1,12 @@
+<h2>Escolha o vículo para o transporte</h2>
+
+<%= form_with model: [:users_backoffice, @order] do |f| %>
+  <div>
+    <%= f.label :vehicle_id, 'Veículo' %>
+    <%= f.collection_select :vehicle_id, @vehicles, :id, :model %>
+  </div>
+
+  <div>
+    <%= f.submit 'Aceitar' %>
+  </div>
+<% end %>

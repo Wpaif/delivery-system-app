@@ -1,0 +1,25 @@
+<h2>Ordens de Serviço</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Para</th>
+      <th>Cidade</th>
+      <th>Distância</th>
+      <th>Status</th>
+      <td>Ações</td>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td> <%= order.recipient %> </td>
+        <td> <%= order.city %> </td>
+        <td> <%= order.distance %> </td>
+        <td> <%= order.status %> </td>
+        <td> <%= link_to 'Ver detalhes', users_backoffice_order_path(order.id) %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

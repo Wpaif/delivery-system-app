@@ -2,8 +2,9 @@
 
 
 <% if current_user.carrier_id %>
-  <%= link_to 'Veículos', users_backoffice_vehicles_path %>
-  <%= link_to 'Configurações de preços', users_backoffice_price_settings_path %>
-  <%= link_to 'Prazos', users_backoffice_deadlines_path %>
+  <%= link_to 'Veículos', users_backoffice_vehicles_path %> |
+  <%= link_to 'Configurações de preços', users_backoffice_price_settings_path %> |
+  <%= link_to 'Prazos', users_backoffice_deadlines_path %> |
+  <%= link_to 'Ordens de Serviços', users_backoffice_orders_path %>
 <% end %>
 

@@ -51,12 +51,6 @@ RSpec.describe Order, type: :model do
                         email_domain: 'buggy.com', registered_number: '00.112.112/0001-39',
                         billing_address: 'Karai Bari Island', enable: true)
 
-        PriceSetting.create!(lower_limit: 0, upper_limit: 100, value: 10, carrier_id: Carrier.first.id)
-        PriceSetting.create!(lower_limit: 101, upper_limit: 1000, value: 15, carrier_id: Carrier.first.id)
-
-        Deadline.create!(lower_limit: 0, upper_limit: 100, days: 10, carrier_id: Carrier.first.id)
-        Deadline.create!(lower_limit: 101, upper_limit: 1000, days: 25, carrier_id: Carrier.first.id)
-
         order = Order.new(recipient: 'Monkey D. Luffy', distance: 100, postal_code: '12345-999',
                           city: 'Vila Foosha', street: 'Meat Street', number: 0, weight: 100,
                           carrier_id: Carrier.first.id)
@@ -71,12 +65,6 @@ RSpec.describe Order, type: :model do
                         email_domain: 'buggy.com', registered_number: '00.112.112/0001-39',
                         billing_address: 'Karai Bari Island', enable: true)
 
-        PriceSetting.create!(lower_limit: 0, upper_limit: 100, value: 10, carrier_id: Carrier.first.id)
-        PriceSetting.create!(lower_limit: 101, upper_limit: 1000, value: 15, carrier_id: Carrier.first.id)
-
-        Deadline.create!(lower_limit: 0, upper_limit: 100, days: 10, carrier_id: Carrier.first.id)
-        Deadline.create!(lower_limit: 101, upper_limit: 1000, days: 25, carrier_id: Carrier.first.id)
-
         order = Order.new(recipient: '', distance: 100, postal_code: '12345-999',
                           city: 'Vila Foosha', street: 'Meat Street', number: 0, weight: 100,
                           carrier_id: Carrier.first.id)
@@ -88,12 +76,6 @@ RSpec.describe Order, type: :model do
         Carrier.create!(brand_name: 'Pirate Dispatch Organization', corporate_name: "Buggy's Delivery",
                         email_domain: 'buggy.com', registered_number: '00.112.112/0001-39',
                         billing_address: 'Karai Bari Island', enable: true)
-
-        PriceSetting.create!(lower_limit: 0, upper_limit: 100, value: 10, carrier_id: Carrier.first.id)
-        PriceSetting.create!(lower_limit: 101, upper_limit: 1000, value: 15, carrier_id: Carrier.first.id)
-
-        Deadline.create!(lower_limit: 0, upper_limit: 100, days: 10, carrier_id: Carrier.first.id)
-        Deadline.create!(lower_limit: 101, upper_limit: 1000, days: 25, carrier_id: Carrier.first.id)
 
         order = Order.new(recipient: 'Monkey D. Luffy', distance: '', postal_code: '12345-999',
                           city: 'Vila Foosha', street: 'Meat Street', number: 0, weight: 100,
@@ -107,12 +89,6 @@ RSpec.describe Order, type: :model do
                         email_domain: 'buggy.com', registered_number: '00.112.112/0001-39',
                         billing_address: 'Karai Bari Island', enable: true)
 
-        PriceSetting.create!(lower_limit: 0, upper_limit: 100, value: 10, carrier_id: Carrier.first.id)
-        PriceSetting.create!(lower_limit: 101, upper_limit: 1000, value: 15, carrier_id: Carrier.first.id)
-
-        Deadline.create!(lower_limit: 0, upper_limit: 100, days: 10, carrier_id: Carrier.first.id)
-        Deadline.create!(lower_limit: 101, upper_limit: 1000, days: 25, carrier_id: Carrier.first.id)
-
         order = Order.new(recipient: 'Monkey D. Luffy', distance: 100, postal_code: '',
                           city: 'Vila Foosha', street: 'Meat Street', number: 0, weight: 100,
                           carrier_id: Carrier.first.id)
@@ -124,12 +100,6 @@ RSpec.describe Order, type: :model do
         Carrier.create!(brand_name: 'Pirate Dispatch Organization', corporate_name: "Buggy's Delivery",
                         email_domain: 'buggy.com', registered_number: '00.112.112/0001-39',
                         billing_address: 'Karai Bari Island', enable: true)
-
-        PriceSetting.create!(lower_limit: 0, upper_limit: 100, value: 10, carrier_id: Carrier.first.id)
-        PriceSetting.create!(lower_limit: 101, upper_limit: 1000, value: 15, carrier_id: Carrier.first.id)
-
-        Deadline.create!(lower_limit: 0, upper_limit: 100, days: 10, carrier_id: Carrier.first.id)
-        Deadline.create!(lower_limit: 101, upper_limit: 1000, days: 25, carrier_id: Carrier.first.id)
 
         order = Order.new(recipient: 'Monkey D. Luffy', distance: 100, postal_code: '12345-678',
                           city: '', street: 'Meat Street', number: 0, weight: 100,
@@ -143,12 +113,6 @@ RSpec.describe Order, type: :model do
                         email_domain: 'buggy.com', registered_number: '00.112.112/0001-39',
                         billing_address: 'Karai Bari Island', enable: true)
 
-        PriceSetting.create!(lower_limit: 0, upper_limit: 100, value: 10, carrier_id: Carrier.first.id)
-        PriceSetting.create!(lower_limit: 101, upper_limit: 1000, value: 15, carrier_id: Carrier.first.id)
-
-        Deadline.create!(lower_limit: 0, upper_limit: 100, days: 10, carrier_id: Carrier.first.id)
-        Deadline.create!(lower_limit: 101, upper_limit: 1000, days: 25, carrier_id: Carrier.first.id)
-
         order = Order.new(recipient: 'Monkey D. Luffy', distance: 100, postal_code: '12345-678',
                           city: 'Vila Foosha', street: '', number: 0, weight: 100,
                           carrier_id: Carrier.first.id)
@@ -160,12 +124,6 @@ RSpec.describe Order, type: :model do
         Carrier.create!(brand_name: 'Pirate Dispatch Organization', corporate_name: "Buggy's Delivery",
                         email_domain: 'buggy.com', registered_number: '00.112.112/0001-39',
                         billing_address: 'Karai Bari Island', enable: true)
-
-        PriceSetting.create!(lower_limit: 0, upper_limit: 100, value: 10, carrier_id: Carrier.first.id)
-        PriceSetting.create!(lower_limit: 101, upper_limit: 1000, value: 15, carrier_id: Carrier.first.id)
-
-        Deadline.create!(lower_limit: 0, upper_limit: 100, days: 10, carrier_id: Carrier.first.id)
-        Deadline.create!(lower_limit: 101, upper_limit: 1000, days: 25, carrier_id: Carrier.first.id)
 
         order = Order.new(recipient: 'Monkey D. Luffy', distance: 100, postal_code: '12345-678',
                           city: 'Vila Foosha', street: 'Meat Street', number: '', weight: 100,
@@ -179,12 +137,6 @@ RSpec.describe Order, type: :model do
                         email_domain: 'buggy.com', registered_number: '00.112.112/0001-39',
                         billing_address: 'Karai Bari Island', enable: true)
 
-        PriceSetting.create!(lower_limit: 0, upper_limit: 100, value: 10, carrier_id: Carrier.first.id)
-        PriceSetting.create!(lower_limit: 101, upper_limit: 1000, value: 15, carrier_id: Carrier.first.id)
-
-        Deadline.create!(lower_limit: 0, upper_limit: 100, days: 10, carrier_id: Carrier.first.id)
-        Deadline.create!(lower_limit: 101, upper_limit: 1000, days: 25, carrier_id: Carrier.first.id)
-
         order = Order.new(recipient: 'Monkey D. Luffy', distance: 100, postal_code: '12345-678',
                           city: 'Vila Foosha', street: 'Meat Street', number: 0, weight: '',
                           carrier_id: Carrier.first.id)
@@ -196,12 +148,6 @@ RSpec.describe Order, type: :model do
         Carrier.create!(brand_name: 'Pirate Dispatch Organization', corporate_name: "Buggy's Delivery",
                         email_domain: 'buggy.com', registered_number: '00.112.112/0001-39',
                         billing_address: 'Karai Bari Island', enable: true)
-
-        PriceSetting.create!(lower_limit: 0, upper_limit: 100, value: 10, carrier_id: Carrier.first.id)
-        PriceSetting.create!(lower_limit: 101, upper_limit: 1000, value: 15, carrier_id: Carrier.first.id)
-
-        Deadline.create!(lower_limit: 0, upper_limit: 100, days: 10, carrier_id: Carrier.first.id)
-        Deadline.create!(lower_limit: 101, upper_limit: 1000, days: 25, carrier_id: Carrier.first.id)
 
         order = Order.new(recipient: 'Monkey D. Luffy', distance: 100, postal_code: '12345-678',
                           city: 'Vila Foosha', street: 'Meat Street', number: 0, weight: 100,
@@ -217,12 +163,6 @@ RSpec.describe Order, type: :model do
                         email_domain: 'buggy.com', registered_number: '00.112.112/0001-39',
                         billing_address: 'Karai Bari Island', enable: true)
 
-        PriceSetting.create!(lower_limit: 0, upper_limit: 100, value: 10, carrier_id: Carrier.first.id)
-        PriceSetting.create!(lower_limit: 101, upper_limit: 1000, value: 15, carrier_id: Carrier.first.id)
-
-        Deadline.create!(lower_limit: 0, upper_limit: 100, days: 10, carrier_id: Carrier.first.id)
-        Deadline.create!(lower_limit: 101, upper_limit: 1000, days: 25, carrier_id: Carrier.first.id)
-
         order = Order.new(recipient: 'Monkey D. Luffy', distance: 100, postal_code: '1234-999',
                           city: 'Vila Foosha', street: 'Meat Street', number: 0, weight: 100,
                           carrier_id: Carrier.first.id)
@@ -234,12 +174,6 @@ RSpec.describe Order, type: :model do
         Carrier.create!(brand_name: 'Pirate Dispatch Organization', corporate_name: "Buggy's Delivery",
                         email_domain: 'buggy.com', registered_number: '00.112.112/0001-39',
                         billing_address: 'Karai Bari Island', enable: true)
-
-        PriceSetting.create!(lower_limit: 0, upper_limit: 100, value: 10, carrier_id: Carrier.first.id)
-        PriceSetting.create!(lower_limit: 101, upper_limit: 1000, value: 15, carrier_id: Carrier.first.id)
-
-        Deadline.create!(lower_limit: 0, upper_limit: 100, days: 10, carrier_id: Carrier.first.id)
-        Deadline.create!(lower_limit: 101, upper_limit: 1000, days: 25, carrier_id: Carrier.first.id)
 
         order = Order.new(recipient: 'Monkey D. Luffy', distance: 100, postal_code: '1234-999',
                           city: 'Vila Foosha', street: 'Meat Street', number: 0, weight: 100,
