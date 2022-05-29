@@ -1,7 +1,7 @@
 pt-BR:
   activerecord:
     models:
-      order: Pedido
+      order: Ordem de Serviço
     attributes:
       order:
         id: ID

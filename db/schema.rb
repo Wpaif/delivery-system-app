@@ -53,7 +53,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_26_055649) do
     t.string "street"
     t.integer "number"
     t.integer "weight"
-    t.integer "code"
+    t.string "code"
+    t.datetime "estimated_delivery_date"
     t.integer "vehicle_id"
     t.integer "carrier_id", null: false
     t.datetime "created_at", null: false

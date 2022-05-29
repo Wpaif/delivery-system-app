@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   namespace :admins_backoffice do
-    resources :orders, only: %i[new create]
+    resources :orders, only: %i[show new create]
     resources :carriers, only: %i[index show new create]
     get 'welcome/index'
     get 'budgets', to: 'welcome#budgets'

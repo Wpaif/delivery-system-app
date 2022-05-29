@@ -1,6 +1,6 @@
 <h2>Cadastro de ordem de serviço</h2>
 
-<%= form_with model: [:admins_backoffice, @order] do |f| %>
+<%= form_with model: [:admins_backoffice, @order], method: :post do |f| %>
   <div>
     <%= f.label :recipient %>
     <%= f.text_field :recipient %>
@@ -34,6 +34,11 @@
   <div>
     <%= f.label :distance %>
     <%= f.number_field :distance %>
+  </div>
+
+  <div>
+    <%= f.label :carrier_id%>
+    <%= f.collection_select :carrier_id, @carriers, :id, :brand_name %>
   </div>
 
   <div>

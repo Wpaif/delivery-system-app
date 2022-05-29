@@ -9,7 +9,8 @@ class CreateOrders < ActiveRecord::Migration[7.0]
       t.string :street
       t.integer :number
       t.integer :weight
-      t.integer :code
+      t.string :code
+      t.datetime :estimated_delivery_date
       t.references :vehicle, foreign_key: true
       t.references :carrier, null: false, foreign_key: true
 

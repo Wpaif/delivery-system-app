@@ -1,0 +1,47 @@
+<h2><%= "Ordem de serviço <#{@order.code}>" %></h2>
+
+<dl>
+  <div class="description-list-container">
+    <dt><strong>Destinatário:</strong></dt>
+    <dd><%= @order.recipient %></dd>
+  </div>
+
+  <div class="description-list-container">
+    <dt><strong>CEP:</strong></dt>
+    <dd><%= @order.postal_code %></dd>
+  </div>
+
+  <div class="description-list-container">
+    <dt><strong>Cidade:</strong></dt>
+    <dd><%= @order.city %></dd>
+  </div>
+
+  <div class="description-list-container">
+    <dt><strong>Rua:</strong></dt>
+    <dd><%= @order.street %></dd>
+  </div>
+
+  <div class="description-list-container">
+    <dt><strong>Número:</strong></dt>
+    <dd><%= @order.number %></dd>
+  </div>
+
+   <div class="description-list-container">
+    <dt><strong>Peso:</strong></dt>
+    <dd><%= @order.weight %>Kg</dd>
+  </div>
+
+   <div class="description-list-container">
+    <dt><strong>Distância:</strong></dt>
+    <dd><%= @order.distance %>Km</dd>
+  </div>
+  
+   
+   <% if @order.estimated_delivery_date %>
+    <div class="description-list-container">
+      <dt><strong>Data estimada para entrega:</strong></dt>
+      <dd><%= @order.estimated_delivery_date %></dd>
+    </div>
+   <% end %>
+   
+</dl> 
