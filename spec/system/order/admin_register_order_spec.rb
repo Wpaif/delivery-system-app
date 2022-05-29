@@ -79,5 +79,35 @@ describe 'Adiministrador registra um pedido' do
     expect(page).to have_content 'Peso: 100Kg'
     expect(page).to have_content 'Distância: 1000Km'
   end
+
+  it 'Com dados inválidos' do
+    Carrier.create!(brand_name: 'Pirate Dispatch Organization', corporate_name: "Buggy's Delivery",
+                    email_domain: 'buggy.com', registered_number: '00.112.112/0001-39',
+                    billing_address: 'Karai Bari Island', enable: true)
+
+    PriceSetting.create!(lower_limit: 0, upper_limit: 100, value: 10, carrier_id: Carrier.first.id)
+    PriceSetting.create!(lower_limit: 101, upper_limit: 1000, value: 15, carrier_id: Carrier.first.id)
+
+    Deadline.create!(lower_limit: 0, upper_limit: 100, days: 10, carrier_id: Carrier.first.id)
+    Deadline.create!(lower_limit: 101, upper_limit: 1000, days: 25, carrier_id: Carrier.first.id)
+
+    Admin.create!(email: 'wilian@sistemadefretes.com.br', password: '123456')
+
+    visit admin_path
+    within('form') do
+      fill_in 'Email', with: 'wilian@sistemadefretes.com.br'
+      fill_in 'Senha', with: '123456'
+      click_on 'Entrar'
+    end
+
+    click_on 'Nova ordem de serviço'
+
+    fill_in 'Destinatário', with: 'Monkey D. Luffy'
+    fill_in 'CEP', with: '90990-000'
+    fill_in 'Cidade', with: 'Vila Foosha'
+    fill_in 'Rua', with: 'Meat Street'
+    fill_in 'Número', with: '0'
+    fill_in 'Peso', with: '100'
+  end
 end
 # rubocop:enable Metrics/BlockLength

@@ -26,17 +26,21 @@
     <dd><%= @order.number %></dd>
   </div>
 
-   <div class="description-list-container">
+  <div class="description-list-container">
     <dt><strong>Peso:</strong></dt>
     <dd><%= @order.weight %>Kg</dd>
   </div>
 
-   <div class="description-list-container">
+  <div class="description-list-container">
     <dt><strong>Distância:</strong></dt>
     <dd><%= @order.distance %>Km</dd>
   </div>
+
+   <div class="description-list-container">
+    <dt><strong>Status:</strong></dt>
+    <dd><%= @order.status %>  </dd>
+  </div>
   
-   
    <% if @order.estimated_delivery_date %>
     <div class="description-list-container">
       <dt><strong>Data estimada para entrega:</strong></dt>
@@ -44,4 +48,4 @@
     </div>
    <% end %>
    
-</dl> 
+</dl>   
