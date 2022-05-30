@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :order_details, only: [] do
+    get '/search', to: 'home#search', on: :collection
+  end
+
   namespace :users_backoffice do
     resources :order_details, only: %i[index new create]
     resources :orders, only: %i[index show edit update]

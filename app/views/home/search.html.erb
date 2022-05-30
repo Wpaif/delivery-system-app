@@ -1,0 +1,16 @@
+<h2> <%= "Detalhes do pedido <#{@order.code}>" %> </h2>
+
+<h3>Destinatário: <%= capitalize_name(@order.recipient) %> </h3>
+<dl>
+  <% @order.order_details.each do |detail| %>
+    <div class = "description-list-container">
+      <dt><strong>Passou por:</strong></dt>
+      <dd> <%= detail.city %> </dd>
+
+      <td><strong>Em:</strong></td>
+      <dd> <%= I18n.l(detail.created_at, format: :long) %> </dd>
+    </div>
+  <% end %>
+</dl>
+
+<%= link_to 'Voltar', root_path, class: 'back-button' %>

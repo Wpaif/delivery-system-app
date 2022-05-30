@@ -6,7 +6,6 @@ class OrderDetail < ApplicationRecord
   validates :city, uniqueness: true
 
   def set_attributes
-    self.date = Date.today
     order.update(status: :delivered) if order.city == city
   end
 end

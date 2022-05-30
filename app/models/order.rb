@@ -1,6 +1,7 @@
 class Order < ApplicationRecord
   belongs_to :vehicle, optional: true
   belongs_to :carrier
+  has_many :order_details
 
   validates :status, :recipient, :distance, :postal_code, :city, :street, :number, :weight, :carrier_id,
             presence: true
