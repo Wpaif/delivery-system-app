@@ -1,4 +1,7 @@
 pt-BR:
+  pending: Pendente de aceitação
+  on_carriage: 'Em transporte'
+  delivered: 'Entregue'
   activerecord:
     models:
       order: Ordem de Serviço

@@ -1,0 +1,27 @@
+<h2>Atualização da order de serviço</h2>
+
+<% if @order_detail.errors.any? %>
+  <p>Verifique os erros abaixo:</p>
+  <ul>
+    <% @order_detail.errors.full_messages.each do |message| %>
+      <% unless message.eql?('Cidade já está em uso') %>
+        <li> 
+          <%= message %> 
+        </li>
+      <% else %>
+        <li> A encomenda já passou pela cidade informada </li>
+      <% end %>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_with model: [:users_backoffice, @order_detail] do |f| %>
+  <div>
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+  </div>
+
+  <div>
+    <%= f.submit "Atualizar" %>
+  </div>
+<% end %>

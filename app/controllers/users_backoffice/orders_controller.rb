@@ -8,6 +8,7 @@ class UsersBackoffice::OrdersController < UsersBackofficeController
   def show
     @value = PriceSetting.settings_with_range(params).first.value * @order.weight
     @vehicles = Vehicle.vehicle_available_to_weight(@order.weight).reject(&:order).any?
+    cookies[:current_order_id] = params[:id]
   end
 
   def edit

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 # rubocop:disable Metrics/BlockLength
-describe 'Usuário aceita ordem de pedido' do
+describe 'Usuário aceita ordem de serviço' do
   it 'e vê o botão de para tal' do
     Carrier.create!(brand_name: 'Pirate Dispatch Organization', corporate_name: "Buggy's Delivery",
                     email_domain: 'buggy.com', registered_number: '00.112.112/0001-39',
@@ -36,7 +36,7 @@ describe 'Usuário aceita ordem de pedido' do
     expect(page).to have_content 'Peso: 1000Kg'
     expect(page).to have_content 'Distância: 100Km'
     expect(page).to have_content 'Valor: R$ 10.000,00'
-    expect(page).to have_content 'Status: pending'
+    expect(page).to have_content 'Status: Pendente de aceitação'
     expect(page).not_to have_content 'Data estimada para entrega:'
 
     expect(page).to have_link 'Aceitar'

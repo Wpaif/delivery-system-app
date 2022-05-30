@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_26_055649) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_30_163932) do
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -42,6 +42,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_26_055649) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["carrier_id"], name: "index_deadlines_on_carrier_id"
+  end
+
+  create_table "order_details", force: :cascade do |t|
+    t.string "city"
+    t.datetime "date"
+    t.integer "order_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_order_details_on_order_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -81,7 +90,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_26_055649) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "carrier_id"
+    t.integer "carrier_id", null: false
     t.index ["carrier_id"], name: "index_users_on_carrier_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -100,6 +109,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_26_055649) do
   end
 
   add_foreign_key "deadlines", "carriers"
+  add_foreign_key "order_details", "orders"
   add_foreign_key "orders", "carriers"
   add_foreign_key "orders", "vehicles"
   add_foreign_key "price_settings", "carriers"

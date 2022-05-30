@@ -50,11 +50,14 @@
 
    <div class="description-list-container">
     <dt><strong>Status:</strong></dt>
-    <dd><%= @order.status %>  </dd>
+    <dd><%= I18n.t(@order.status) %>  </dd>
   </div>
 </dl>   
 
 <% if @order.pending? && @vehicles %>
   <%= link_to 'Aceitar', edit_users_backoffice_order_path(@order), class: 'accept-button' %>
+<% elsif @order.on_carriage? %>
+  <%= link_to 'Atualizar Status', new_users_backoffice_order_detail_path, class: 'update-button' %>
 <% end %>
+
 <%= link_to 'Voltar', users_backoffice_orders_path, class: 'back-button' %>

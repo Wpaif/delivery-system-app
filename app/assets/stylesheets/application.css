@@ -159,6 +159,16 @@ main a.accept-button {
   font-weight: bold;    
 }
 
+main a.update-button {
+  color: #FFF;
+  font-weight: 100;
+  text-decoration: none;
+  background-color: #ffa600;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;    
+}
+
 main a.register-button{
   color: #FFF;
   font-weight: 100;

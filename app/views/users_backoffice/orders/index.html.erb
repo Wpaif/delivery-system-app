@@ -1,25 +1,31 @@
 <h2>Ordens de Serviço</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>Para</th>
-      <th>Cidade</th>
-      <th>Distância</th>
-      <th>Status</th>
-      <td>Ações</td>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @orders.each do |order| %>
+<% unless @orders.any? %>
+  <p class="alert">Não há ordens de serviços</p>
+<% else %>
+  <table>
+    <thead>
       <tr>
-        <td> <%= order.recipient %> </td>
-        <td> <%= order.city %> </td>
-        <td> <%= order.distance %> </td>
-        <td> <%= order.status %> </td>
-        <td> <%= link_to 'Ver detalhes', users_backoffice_order_path(order.id) %> </td>
+        <th>Para</th>
+        <th>Cidade</th>
+        <th>Distância</th>
+        <th>Status</th>
+        <th>Ações</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @orders.each do |order| %>
+        <tr>
+          <td> <%= order.recipient %> </td>
+          <td> <%= order.city %> </td>
+          <td> <%= order.distance %> Km </td>
+          <td> <%= I18n.t(order.status) %> </td>
+          <td> <%= link_to 'Ver detalhes', users_backoffice_order_path(order.id) %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+<%= link_to 'Voltar', user_root_path, class: 'back-button' %>

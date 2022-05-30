@@ -1,0 +1,10 @@
+pt-BR:
+  activerecord:
+    models:
+      order_detail: Detalhes do pedido
+    attributes:
+      order_detail:
+        city: Cidade
+        date: Data
+        created_at: Hora
+        updated_at: Hora atualizada em
