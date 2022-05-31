@@ -1,5 +1,7 @@
 <h2>Consulte o orçamento</h2>
 
+<%= link_to 'Histórico de Pesquisas', admins_backoffice_query_history_index_path %>
+
 <% if @carriers.any? %>
   <%= form_with url: admins_backoffice_budget_result_path, method: :get do |f| %>
 
@@ -25,4 +27,4 @@
 <% end %>
 
 
- <%= link_to 'Voltar', admins_backoffice_welcome_index_path, class: 'back-button' %>
+<%= link_to 'Voltar', admins_backoffice_welcome_index_path, class: 'back-button' %>

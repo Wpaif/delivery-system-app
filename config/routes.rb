@@ -1,3 +1,4 @@
+# rubocop:disable Metrics/BlockLength
 Rails.application.routes.draw do
   resources :order_details, only: [] do
     get '/search', to: 'home#search', on: :collection
@@ -15,6 +16,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   namespace :admins_backoffice do
+    resources :query_history, only: %i[index]
     resources :orders, only: %i[show new create]
     resources :carriers, only: %i[index show new create] do
       post 'disable', on: :member
@@ -28,3 +30,4 @@ Rails.application.routes.draw do
 
   root to: 'home#index'
 end
+# rubocop:enable Metrics/BlockLength

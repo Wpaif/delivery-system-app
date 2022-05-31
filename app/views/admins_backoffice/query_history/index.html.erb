@@ -1,0 +1,16 @@
+<h2>Histórico de pesquisas</h2>
+
+<dl>
+  <% @search_history.each do |search| %>
+    <div class="description-list-container-log">
+      <dt><strong>Valor:</strong></dt>
+      <dd> <%= search.value %> </dd>
+      <dt><strong>Data estimada para entrega:</strong></dt>
+      <dd> <%= I18n.l(search.estimated_delivery_date, format: :long) %> </dd>
+      <dt><strong>Pesquisa feita em:</strong></dt>
+      <dd> <%= I18n.l( search.created_at, format: :long) %> </dd>
+    </div>
+  <% end %>
+</dl>
+
+<%= link_to 'Voltar', admins_backoffice_budgets_path, class: 'back-button' %>
