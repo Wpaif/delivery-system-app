@@ -169,6 +169,30 @@ main a.update-button {
   font-weight: bold;    
 }
 
+main div.button-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: start;
+  align-items: baseline;
+  width: 280px;
+  height: 40px;
+}
+
+main button.disable-button {
+  color: #FFF;
+  font-weight: 100;
+  text-decoration: none;
+  background-color: #ff0000;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  border: none;
+  display: inline;
+  cursor: pointer;
+  font-size: 12pt;
+}
+
 main a.register-button{
   color: #FFF;
   font-weight: 100;

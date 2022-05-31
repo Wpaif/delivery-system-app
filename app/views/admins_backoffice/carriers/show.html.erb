@@ -31,4 +31,10 @@
   </div>
 </dl>
 
-<%= link_to 'Voltar', admins_backoffice_carriers_path, class: 'back-button'  %>
+<div class="button-container">
+  <% if @carrier.enable %>
+    <%= button_to 'Desativa transportadora', disable_admins_backoffice_carrier_path(@carrier.id), 
+                  class: 'disable-button'%>
+  <% end %>
+  <%= link_to 'Voltar', admins_backoffice_carriers_path, class: 'back-button'  %>
+</div>

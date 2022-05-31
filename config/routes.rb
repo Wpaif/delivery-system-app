@@ -16,7 +16,9 @@ Rails.application.routes.draw do
 
   namespace :admins_backoffice do
     resources :orders, only: %i[show new create]
-    resources :carriers, only: %i[index show new create]
+    resources :carriers, only: %i[index show new create] do
+      post 'disable', on: :member
+    end
     get 'welcome/index'
     get 'budgets', to: 'welcome#budgets'
     get 'budget_result', to: 'welcome#budget_result'
